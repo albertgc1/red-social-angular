@@ -1,0 +1,47 @@
+<mat-card class="card">
+    <div *ngIf="!user.avatar" class="avatar" (click)="openModal()">toca pa subir tu foto</div>
+    <img class="avatar" *ngIf="user && user.avatar" src="{{ url + '/app/' + user.avatar }}" alt="">
+    <mat-icon (click)="openModal()">add_a_photo</mat-icon>
+    <mat-card-header class="card-header">
+        <mat-card-title>{{ user.name }} {{ user.last_name }}</mat-card-title>
+    </mat-card-header>
+    <mat-card-content class="card-content">
+        <div class="follow">
+            <div class="total">80</div>
+            <div class="label">Follow</div>
+        </div>
+        <div class="followers">
+            <div class="total">100</div>
+            <div class="label">Followers</div>
+        </div>
+        <div class="posts">
+            <div class="total">10</div>
+            <div class="label">posts</div>
+        </div>
+    </mat-card-content>
+</mat-card>
+
+<mat-card class="nav-profile">
+    <div class="item">
+        <mat-icon>linked_camera</mat-icon>
+        <span>Fotos</span>
+    </div>
+    <div class="item">
+        <mat-icon>subscriptions</mat-icon>
+        <span>Videos</span>
+    </div>
+    <div class="item">
+        <mat-icon>missed_video_call</mat-icon>
+        <span>Transmitir</span>
+    </div>
+    <div class="item">
+        <mat-icon>fitness_center</mat-icon>
+        <span>Rutina</span>
+    </div>
+    <div class="item">
+        <mat-icon>restaurant</mat-icon>
+        <span>Recetas</span>
+    </div>
+</mat-card>
+
+<app-posts *ngFor="let post of posts" [post]="post" (updateLike)="getMyPosts(user.id)"></app-posts>

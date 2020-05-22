@@ -1,0 +1,44 @@
+.card{
+    max-width: 400px;
+    min-width: 250px;
+    width: 100%;
+    margin-top: 10px;
+    margin-left: 8px;
+}
+
+.header{
+    width: 100%;
+}
+.form{
+    width: 100%;
+}
+.full-width{
+    width: 100%;
+}
+.tab-icon{
+    margin-right: 8px;
+}
+
+.card .results{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.card .results .avatar, .avatarDefault{
+    width: 47px !important;
+    height: 47px !important;
+    border-radius: 50%;
+}
+.card .results .cdata{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+.card .results .time{
+    font-size: 11px;
+}
+.card .results .action{
+    margin-right: 3px;
+}

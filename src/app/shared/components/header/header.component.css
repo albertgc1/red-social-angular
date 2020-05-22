@@ -1,0 +1,20 @@
+.spacer{
+    flex: 1 1 auto;
+}
+.user{
+    display: flex;
+    align-items: center;
+}
+.avatar{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: orange;
+    color: white;
+    text-align: center;
+    margin-right: 10px;
+}
+a{
+    text-decoration: none;
+    color: white;
+}

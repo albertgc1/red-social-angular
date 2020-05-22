@@ -1,0 +1,25 @@
+<div class="card">
+
+    <div class="title">
+        <h3>Publicación de Albert</h3>
+        <mat-icon (click)="closeModal()">clear</mat-icon>
+    </div>
+
+    <div class="body">
+        <div class="form">
+            <div mat-card-avatar class="avatarDefault">A</div>
+            <input type="text" placeholder="deja un comentario" [(ngModel)]="comment.comment">
+            <mat-icon class="icon" (click)="storeComment()">send</mat-icon>
+        </div>
+        <mat-progress-bar mode="indeterminate" *ngIf="loading"></mat-progress-bar>
+        <div class="comments" *ngFor="let comment of comments">
+            <div *ngIf="!comment.user.avatar" mat-card-avatar class="avatarDefault">A</div>
+            <img *ngIf="comment.user.avatar" class="avatar" src="{{ url + '/app/' + comment.user.avatar }}" alt="comment.user.name">
+            <div class="cdata">
+                <div class="comment">{{ comment.comment }}</div>
+                <span class="time">{{ comment.created_at }}</span>
+            </div>
+        </div>
+    </div>
+
+</div>

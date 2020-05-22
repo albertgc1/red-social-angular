@@ -1,0 +1,43 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+
+<mat-card class="card">
+
+    <mat-card-header class="card-header">
+        <mat-card-title>Registro de Cuenta</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="form-group">
+        <mat-form-field class="input">
+            <mat-label>Nombre</mat-label>
+            <input matInput [(ngModel)]="user.name" required>
+            <mat-hint class="error" *ngIf="errors.name">{{ errors.name[0] }}</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Apellidos</mat-label>
+            <input  matInput [(ngModel)]="user.last_name">
+            <mat-hint class="error" *ngIf="errors.last_name">{{ errors.last_name[0] }}</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Correo</mat-label>
+            <input  matInput [(ngModel)]="user.email" placeholder="Ex. pat@example.com">
+            <mat-hint class="error" *ngIf="errors.email">{{ errors.email[0] }}</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="input"
+                >
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="user.password">
+            <mat-hint class="error" *ngIf="errors.password">{{ errors.password[0] }}</mat-hint>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Confirmar Contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="user.password_confirm">
+            <mat-hint class="error" *ngIf="errors.password_confirm">{{ errors.password_confirm[0] }}</mat-hint>
+        </mat-form-field>
+    </mat-card-content>
+
+    <mat-card-actions class="card-actions">
+        <button mat-stroked-button color="warn">Cancelar</button>
+        <button mat-stroked-button color="primary" (click)="login()">Registrar</button>
+    </mat-card-actions>
+
+</mat-card>

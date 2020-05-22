@@ -1,0 +1,14 @@
+<div class="card">
+
+    <h3>A {{ data.likes }} personas les gusta tu publicación</h3>
+
+    <div class="card-content" *ngFor="let user of users">
+        <div *ngIf="!user.avatar" mat-card-avatar class="avatarDefault">A</div>
+        <img *ngIf="user.avatar" class="avatar" src="{{ url + '/app/' + user.avatar }}" alt="user.name">
+        <div class="data-user">
+            <div class="name">{{ user.user }} {{ user.last_name }}</div>
+            <div class="time">{{ user.created_at }}</div>
+        </div>
+    </div>
+
+</div>

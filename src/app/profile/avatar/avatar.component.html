@@ -1,0 +1,11 @@
+<div class="card">
+    <div *ngIf="!avatar" class="avatar"></div>
+    <img *ngIf="avatar" src="{{ url + '/app/' + avatar }}" alt="">
+    <label>Selecciona tu foto de perfíl</label>
+    <input type="file" [(ngModel)]="avatarFile" (change)="storeAvatar($event)">
+    <div class="card-actions">
+        <button mat-raised-button color="warn" (click)="cancel()">Cancelar</button>
+        <button mat-raised-button color="primary" (click)="save()">Guardar</button>
+    </div>
+</div>
+

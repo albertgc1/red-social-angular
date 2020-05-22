@@ -1,0 +1,36 @@
+<mat-progress-bar *ngIf="loading" mode="indeterminate"></mat-progress-bar>
+<mat-card class="card">
+
+    <mat-card-header class="card-header">
+        <mat-card-title>Bienvenido, autentícate</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content class="form-group">
+        <mat-form-field class="input">
+            <mat-label>Correo</mat-label>
+            <input matInput [(ngModel)]="data.email"
+                   placeholder="Ex. pat@example.com" required>
+        </mat-form-field>
+        <mat-form-field class="input">
+            <mat-label>Contraseña</mat-label>
+            <input matInput type="password" [(ngModel)]="data.password" required>
+        </mat-form-field>
+    </mat-card-content>
+
+    <div class="btn-login">
+        <button mat-raised-button color="primary" (click)="login()">Entrar</button>
+    </div>
+
+    <h2>Aún no tienes cuenta? crea uno <a routerLink="/register"> aquí</a></h2>
+    <h2>Ó puedes:</h2>
+
+    <mat-card-actions class="btn-socials">
+        <button mat-stroked-button color="primary" (click)="loginFacebook()">
+            Iniciar sesión con Facebook
+        </button>
+        <button mat-stroked-button color="warn" (click)="loginGoogle()">
+            iniciar sesión con Google
+        </button>
+    </mat-card-actions>
+
+</mat-card>

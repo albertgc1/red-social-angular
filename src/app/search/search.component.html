@@ -1,0 +1,91 @@
+<mat-tab-group>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">supervisor_account</mat-icon>
+            Personas
+        </ng-template>
+        <div class="card">
+    
+            <div class="header">
+                <div class="form">
+                    <mat-form-field class="full-width">
+                      <mat-label>Buscar...</mat-label>
+                      <input matInput (change)="searchHandle($event)">
+                      <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </div>          
+            </div>
+
+            <p>Nuevos en Nsocial</p>
+        
+            <div class="results" *ngFor="let result of results">
+                <div *ngIf="!result.avatar" mat-card-avatar class="avatarDefault">A</div>
+                <img *ngIf="result.avatar" class="avatar" src="{{ url + '/app/' + result.avatar }}" alt="result.name">
+                <div class="cdata">
+                    <div class="comment">{{ result.name }} {{ result.last_name }}</div>
+                    <span class="time">20 seguidos, siguen a esta persona</span>
+                </div>
+                <div class="action">
+                    <button mat-button color="primary">Seguir</button>
+                </div>
+            </div>
+        
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">fitness_center</mat-icon>
+            Rutinas
+        </ng-template>
+        <div class="card">
+    
+            <div class="header">
+                <form class="form">
+                    <mat-form-field class="full-width">
+                      <mat-label>Buscar...</mat-label>
+                      <input type="text" matInput>
+                      <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </form>          
+            </div>
+
+            <p>Aún no hay rutinas registradas</p>
+        
+            <div class="content">
+                <div class="item">
+        
+                </div>
+            </div>
+        
+        </div>
+    </mat-tab>
+    <mat-tab>
+        <ng-template mat-tab-label>
+            <mat-icon class="tab-icon">restaurant</mat-icon>
+            Recetas
+        </ng-template>
+
+        <div class="card">
+    
+            <div class="header">
+                <form class="form">
+                    <mat-form-field class="full-width">
+                      <mat-label>Buscar...</mat-label>
+                      <input type="text" matInput>
+                      <mat-icon matSuffix>search</mat-icon>
+                    </mat-form-field>
+                </form>          
+            </div>
+
+            <p>Aún no se hay recetas compartidas</p>
+        
+            <div class="content">
+                <div class="item">
+        
+                </div>
+            </div>
+        
+        </div>
+    </mat-tab>
+  </mat-tab-group>
+  

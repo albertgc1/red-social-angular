@@ -1,0 +1,11 @@
+{
+  "targets": {
+    "nsocial-41e19": {
+      "hosting": {
+        "nsocial": [
+          "nsocial-41e19"
+        ]
+      }
+    }
+  }
+}

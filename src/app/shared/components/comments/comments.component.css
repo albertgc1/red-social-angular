@@ -1,0 +1,52 @@
+.card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.body{
+    width: 100%;
+}
+.body .form{
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+}
+.body .form .avatar{
+    width: 12%;
+    height: 34px;
+}
+.body .form input{
+    width: 70%;
+    margin: 0 10px;
+}
+.body .form .icon{
+    width: 10%;
+}
+
+.body .comments{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+.body .comments .avatar, .avatarDefault{
+    width: 12%;
+    height: 34px;
+    border-radius: 50%;
+}
+.body .comments .cdata{
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    margin: 0 10px;
+}
+.body .comments .time{
+    font-size: 11px;
+}

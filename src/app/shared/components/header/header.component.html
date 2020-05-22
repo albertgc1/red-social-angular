@@ -1,0 +1,10 @@
+<mat-toolbar color='primary'>
+    <span>Nsocial</span>
+    <span class="spacer"></span>
+    <a *ngIf="!user" routerLink='login'>Login</a>
+    <div *ngIf="user" class="user">
+      <!-- <div class="avatar" *ngIf="user && !user.avatar">A</div> -->
+      <img class="avatar" *ngIf="user && user.avatar" src="{{ url + '/app/' + user.avatar }}" alt="user.name">
+      <span>{{ user.name }}</span>
+    </div>
+  </mat-toolbar>

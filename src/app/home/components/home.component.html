@@ -1,0 +1,26 @@
+<div class="form">
+    <mat-form-field class="input">
+        <mat-label>Comparte algo aquí</mat-label>
+        <input matInput (click)="create()" [(ngModel)]="post.description">
+    </mat-form-field>
+    <div *ngIf="posting">
+        <div class="image">
+            <div *ngIf="!photo">
+                <p>Sube aqui tu foto</p>
+                <input type="file" (change)="storePhoto($event)">
+            </div>
+            <img *ngIf="photo" src="{{ url + '/app/' + photo }}" alt="">
+        </div>
+        <div class="actions">
+            <button mat-stroked-button color="warn" (click)="cancel()">Cancelar</button>
+            <button mat-stroked-button color="primary" (click)="storePost()">Publicar</button>
+        </div>
+    </div>
+</div>
+
+<div>
+    <app-posts *ngFor="let post of posts" [post]="post" (updateLike)="getPosts()"></app-posts>
+</div>
+
+<p>Cargando...</p>
+<p></p>

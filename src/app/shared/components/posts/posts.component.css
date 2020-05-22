@@ -1,0 +1,33 @@
+.card-post{
+    max-width: 400px;
+    margin-bottom: 10px;
+}
+
+.avatar img{
+    border-radius: 50%;
+}
+
+.card-post img{
+    width: 100%;
+    object-fit: cover;
+}
+.card-actions{
+    display: flex;
+    justify-content: space-between;
+    margin: 0;
+}
+.likes, .comments{
+    display: flex;
+}
+.likes span{
+    margin-left: 5px;
+}
+.comments span{
+    margin-right: 5px;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+.btn-right{
+    margin-bottom: 22px;
+}

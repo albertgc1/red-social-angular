@@ -1,0 +1,34 @@
+<mat-card class="card-post">
+
+    <mat-card-header>
+        <div *ngIf="post && !post.user.avatar" mat-card-avatar class="avatarDefault">{{ post.user.name.substr(0,1) }}</div>
+        <div *ngIf="post && post.user.avatar" mat-card-avatar class="avatar">
+            <img src="{{ url + '/app/' + post.user.avatar }}" alt="">
+        </div>
+        <mat-card-title>{{ post.user.name }} {{ post.user.last_name }}</mat-card-title>
+        <mat-card-subtitle>{{ post.created_at }}</mat-card-subtitle>
+        <span class="example-spacer"></span>
+        <!-- <button mat-button class="btn-right" color="primary">Seguir</button> -->
+        <mat-icon class="btn-right">more_vert</mat-icon>
+    </mat-card-header>
+    
+    <img src="{{ url + '/app/' + post.photo }}" alt="">
+
+    <mat-card-content class="card-content">
+        <p>{{ post.description }}</p>
+    </mat-card-content>
+
+    <mat-card-actions class="card-actions">
+        <div class="likes">
+            <mat-icon *ngIf="post.like_me" (click)="deleteLike(post.id)">favorite</mat-icon>
+            <mat-icon *ngIf="!post.like_me" (click)="storeLike(post.id)">favorite_border</mat-icon>
+            <span>{{ post.likes }}</span>
+            <span (click)="showLikes(post.id, post.likes)">me encanta/s</span>
+        </div>
+        <div class="comments" (click)="showComments(post.id)">
+            <span>{{ post.comments }}</span>
+            <mat-icon>question_answer</mat-icon>
+        </div>
+    </mat-card-actions>
+
+</mat-card>
